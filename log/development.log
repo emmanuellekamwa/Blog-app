@@ -3346,3 +3346,351 @@ Processing by TagsController#index as HTML
 Completed 200 OK in 114ms (Views: 75.6ms | ActiveRecord: 32.1ms | Allocations: 7353)
 
 
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPaperclipFieldsToArticle (20210111101748)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_name" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_content_type" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_size" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_updated_at" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (7.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111101748"]]
+  [1m[35m (61.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 14:22:20 +0100
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 152.5ms | Allocations: 6262)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1120ms (Views: 805.5ms | ActiveRecord: 3.9ms | Allocations: 16788)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2021-01-11 14:22:49 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1249.1ms | Allocations: 9800)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1316.5ms | Allocations: 10086)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1388ms (Views: 1382.0ms | ActiveRecord: 0.0ms | Allocations: 13647)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-01-11 14:22:58 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 57.7ms | Allocations: 1450)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 9.8ms | Allocations: 6466)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @article.title %></h1>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<p><%= @article.body %></p>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "<< Back to Articles List", articles_path %>
+<%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+%>
+<%= link_to "edit", edit_article_path(@article) %>
+):
+1:    <h1><%= @article.title %></h1>
+2:    <p>
+3:      Tags:
+4:      <% @article.tags.each do |tag| %>
+5:        <%= link_to tag.name, tag_path(tag) %>
+6:      <% end %>
+7:    </p>
+8:    
+9:    <p><%= @article.body %></p>
+10:    <h3>Comments (<%= @article.comments.size %>)</h3>
+11:    <%= render partial: 'articles/comment', collection: @article.comments %>
+12:    <%= render partial: 'comments/form' %>
+13:    <%= link_to "<< Back to Articles List", articles_path %>
+14:    <%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+15:    %>
+16:    <%= link_to "edit", edit_article_path(@article) %>
+  
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 14:23:27 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 758)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 59.9ms | ActiveRecord: 0.3ms | Allocations: 4288)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-01-11 14:23:29 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1137)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms | Allocations: 2126)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @article.title %></h1>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<p><%= @article.body %></p>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "<< Back to Articles List", articles_path %>
+<%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+%>
+<%= link_to "edit", edit_article_path(@article) %>
+):
+1:    <h1><%= @article.title %></h1>
+2:    <p>
+3:      Tags:
+4:      <% @article.tags.each do |tag| %>
+5:        <%= link_to tag.name, tag_path(tag) %>
+6:      <% end %>
+7:    </p>
+8:    
+9:    <p><%= @article.body %></p>
+10:    <h3>Comments (<%= @article.comments.size %>)</h3>
+11:    <%= render partial: 'articles/comment', collection: @article.comments %>
+12:    <%= render partial: 'comments/form' %>
+13:    <%= link_to "<< Back to Articles List", articles_path %>
+14:    <%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+15:    %>
+16:    <%= link_to "edit", edit_article_path(@article) %>
+  
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 14:23:41 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 746)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 67.3ms | ActiveRecord: 0.3ms | Allocations: 4229)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2021-01-11 14:23:43 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 11.5ms | Allocations: 1067)
+  Rendered articles/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.0ms | Allocations: 4602)
+
+
+Started POST "/articles" for 127.0.0.1 at 2021-01-11 14:24:06 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"XNcZqJi2pAjzm1gXUvVaT87dZpGS/qfNVJE4tT1fV+WiYYS5j2i0sfNBmmsE2+pEk54eOYrJgVrU5aeDJUB6QA==", "article"=>{"title"=>"", "body"=>"", "tag_list"=>""}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 702)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/articles_controller.rb:25:in `create'
+Started GET "/articles/1" for 127.0.0.1 at 2021-01-11 15:20:00 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1137)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms | Allocations: 2135)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @article.title %></h1>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<p><%= @article.body %></p>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "<< Back to Articles List", articles_path %>
+<%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+%>
+<%= link_to "edit", edit_article_path(@article) %>
+):
+1:    <h1><%= @article.title %></h1>
+2:    <p>
+3:      Tags:
+4:      <% @article.tags.each do |tag| %>
+5:        <%= link_to tag.name, tag_path(tag) %>
+6:      <% end %>
+7:    </p>
+8:    
+9:    <p><%= @article.body %></p>
+10:    <h3>Comments (<%= @article.comments.size %>)</h3>
+11:    <%= render partial: 'articles/comment', collection: @article.comments %>
+12:    <%= render partial: 'comments/form' %>
+13:    <%= link_to "<< Back to Articles List", articles_path %>
+14:    <%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+15:    %>
+16:    <%= link_to "edit", edit_article_path(@article) %>
+  
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (8.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 16:05:45 +0100
+  [1m[35m (22.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 78.2ms | Allocations: 6262)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 421ms (Views: 315.3ms | ActiveRecord: 8.9ms | Allocations: 16790)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-01-11 16:05:50 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 41.1ms | Allocations: 1458)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 1.6ms | Allocations: 6748)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @article.title %></h1>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+<p><%= image_tag @article.image.url %></p>
+<p><%= @article.body %></p>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "<< Back to Articles List", articles_path %>
+<%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+%>
+<%= link_to "edit", edit_article_path(@article) %>
+):
+1:    <h1><%= @article.title %></h1>
+2:    <p>
+3:      Tags:
+4:      <% @article.tags.each do |tag| %>
+5:        <%= link_to tag.name, tag_path(tag) %>
+6:      <% end %>
+7:    </p>
+8:    <p><%= image_tag @article.image.url %></p>
+9:    <p><%= @article.body %></p>
+10:    <h3>Comments (<%= @article.comments.size %>)</h3>
+11:    <%= render partial: 'articles/comment', collection: @article.comments %>
+12:    <%= render partial: 'comments/form' %>
+13:    <%= link_to "<< Back to Articles List", articles_path %>
+14:    <%= link_to "delete", article_path(@article), method: :delete data: {confirm: "Really delete the article?"}
+15:    %>
+16:    <%= link_to "edit", edit_article_path(@article) %>
+  
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:14: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 16:06:07 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 65.4ms | ActiveRecord: 0.2ms | Allocations: 4306)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2021-01-11 16:06:08 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 209.3ms | Allocations: 7723)
+  Rendered articles/new.html.erb within layouts/application (Duration: 232.5ms | Allocations: 8004)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 273ms (Views: 270.3ms | ActiveRecord: 0.0ms | Allocations: 11542)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 17:13:26 +0100
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 125.3ms | Allocations: 6262)
+Completed 500 Internal Server Error in 1677ms (ActiveRecord: 5.0ms | Allocations: 17949)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "ss": expected "{", was ""
+        on line 38:1 of app/assets/stylesheets/styles.css.scss
+>> 
+   ^
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/styles.css.scss:38
+app/views/layouts/application.html.erb:8
+Started GET "/articles/" for 127.0.0.1 at 2021-01-11 17:14:21 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 770)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1021ms (Views: 1015.5ms | ActiveRecord: 0.3ms | Allocations: 23144)
+
+
