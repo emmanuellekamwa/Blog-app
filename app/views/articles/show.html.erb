@@ -5,6 +5,10 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
+<% if logged_in? %>
+
+<% end %>
+
 <p><%= image_tag @article.image.url %></p>
 <p>
   <% if @article.image.exists? %>

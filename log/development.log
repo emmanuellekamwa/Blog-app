@@ -3694,3 +3694,410 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 1021ms (Views: 1015.5ms | ActiveRecord: 0.3ms | Allocations: 23144)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to SorceryCore (20210112090804)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "authors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_authors_on_email" ON "authors" ("email")[0m
+  [1m[36mprimary::SchemaMigration Create (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210112090804"]]
+  [1m[35m (49.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+Started GET "/authors" for 127.0.0.1 at 2021-01-12 11:44:06 +0100
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/authors"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/authors/new" for 127.0.0.1 at 2021-01-12 11:45:58 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 358.6ms | Allocations: 3327)
+  Rendered authors/new.html.erb within layouts/application (Duration: 382.3ms | Allocations: 3660)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1696ms (Views: 1484.1ms | ActiveRecord: 1.5ms | Allocations: 15402)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+Started POST "/authors" for 127.0.0.1 at 2021-01-12 11:47:16 +0100
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"Kka2sSfoQrRKKQzRy8dd9xMPA6ZqdZqC8Pjvh63HsBZUytIk9xXJmB66UcOFemvV471WJJcbJkNpIsNEhEmDug==", "author"=>{"username"=>"emma", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 831)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'username' for Author.):
+  
+app/controllers/authors_controller.rb:27:in `create'
+Started POST "/authors" for 127.0.0.1 at 2021-01-12 16:34:27 +0100
+  [1m[35m (33.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"Kka2sSfoQrRKKQzRy8dd9xMPA6ZqdZqC8Pjvh63HsBZUytIk9xXJmB66UcOFemvV471WJJcbJkNpIsNEhEmDug==", "author"=>{"username"=>"emma", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.0ms | Allocations: 776)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'username' for Author.):
+  
+app/controllers/authors_controller.rb:27:in `create'
+Started GET "/authors" for 127.0.0.1 at 2021-01-12 16:35:16 +0100
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (21.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:17
+  Rendered authors/index.html.erb within layouts/application (Duration: 497.0ms | Allocations: 956)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1895ms (Views: 1749.9ms | ActiveRecord: 21.3ms | Allocations: 5471)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2021-01-13 13:57:59 +0100
+  [1m[35m (25.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (16.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 1319.4ms | Allocations: 6006)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4425ms (Views: 2503.7ms | ActiveRecord: 18.8ms | Allocations: 13021)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/kamwa/.rvm/gems/ruby-2.7.2/bin/rake:23)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+Started GET "/login" for 127.0.0.1 at 2021-01-13 16:36:37 +0100
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 160.0ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1907ms (Views: 1654.1ms | ActiveRecord: 0.0ms | Allocations: 27214)
+
+
+Started GET "/logout" for 127.0.0.1 at 2021-01-13 16:36:45 +0100
+Processing by AuthorSessionsController#destroy as HTML
+Redirected to http://localhost:3000/authors
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/authors" for 127.0.0.1 at 2021-01-13 16:36:45 +0100
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (17.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:17
+  Rendered authors/index.html.erb within layouts/application (Duration: 44.3ms | Allocations: 1336)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 187ms (Views: 65.2ms | ActiveRecord: 18.4ms | Allocations: 6118)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-01-13 16:36:58 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (11.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 116.3ms | Allocations: 6043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 351ms (Views: 138.3ms | ActiveRecord: 21.1ms | Allocations: 12664)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2021-01-13 16:37:08 +0100
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 812.0ms | Allocations: 5327)
+  Rendered authors/new.html.erb within layouts/application (Duration: 849.5ms | Allocations: 5661)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 934ms (Views: 890.5ms | ActiveRecord: 3.6ms | Allocations: 12162)
+
+
+Started POST "/authors" for 127.0.0.1 at 2021-01-13 16:37:13 +0100
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"wXw4LRYBUiN1b4lj8N+paCvOzMLzpFAxM432KArOUbDC9FiKlWUy1+WqTcd8tlFzpo5VOKhXivWwKWqh/rsoOA==", "author"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 866)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'username' for Author.):
+  
+app/controllers/authors_controller.rb:27:in `create'
+Started GET "/articles/" for 127.0.0.1 at 2021-01-13 16:40:28 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 82.0ms | ActiveRecord: 0.3ms | Allocations: 5612)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-01-13 16:40:33 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 520)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.0ms | Allocations: 4692)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-01-13 16:40:36 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 56.3ms | ActiveRecord: 0.0ms | Allocations: 3891)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-01-13 16:40:38 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 755)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.4ms | Allocations: 4376)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-01-13 16:42:03 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2021-01-13 16:42:06 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fDVMv2CiWM5SRTz4h+aIpgEoKiHs+n7s3+uX+LwD8GIXVQvEVGDIcYyq69qD4f92pnrbLsBofU4ZKD1CXX1WMw==", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 3941)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2021-01-13 16:42:10 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"e+wQhtImuPJvOnplrjIvOSJ127LV2eRwPrx4j9JYNeAFYHQTAtsz3jupJ3fgjxkb0seOMCi3WLGnZlRM+9YGTA==", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 3912)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2021-01-13 16:42:50 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KaRo7YnFnU//FO4Ppfzc3HFt1CIuwmo8tQQQiUswLTtXKAx4WTgWY6uHsx3rQer+gd+BoNOs1v0s3jxKYr4elw==", "email"=>"emma@gmzil.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (23.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'emma@gmzil.com' ORDER BY "authors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/author_sessions_controller.rb:6:in `create'
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 38.3ms | ActiveRecord: 23.2ms | Allocations: 4733)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-01-13 16:42:56 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 740)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 0.2ms | Allocations: 4343)
+
+
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAuthor Load (13.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/kamwa/Blog-app/config/environment.rb:5)
+Started GET "/articles" for 127.0.0.1 at 2021-01-14 10:24:19 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `before_filter' for ArticlesController:Class
+Did you mean?  before_action):
+  
+app/controllers/articles_controller.rb:13:in `<class:ArticlesController>'
+app/controllers/articles_controller.rb:1:in `<main>'
+Started GET "/articles" for 127.0.0.1 at 2021-01-14 11:23:46 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+NoMethodError (undefined method `before_filter' for ArticlesController:Class
+Did you mean?  before_action):
+  
+app/controllers/articles_controller.rb:13:in `<class:ArticlesController>'
+app/controllers/articles_controller.rb:1:in `<main>'
+Started GET "/articles" for 127.0.0.1 at 2021-01-14 11:24:50 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+NoMethodError (undefined method `before_filter' for ArticlesController:Class
+Did you mean?  before_action):
+  
+app/controllers/articles_controller.rb:18:in `<class:ArticlesController>'
+app/controllers/articles_controller.rb:1:in `<main>'
+Started GET "/articles" for 127.0.0.1 at 2021-01-14 11:25:33 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (9.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 145.8ms | Allocations: 6268)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2960ms (Views: 2844.1ms | ActiveRecord: 20.6ms | Allocations: 17063)
+
+
