@@ -6,6 +6,7 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
+gem 'rails_12factor', group: :productions
 gem 'sorcery'
 gem "paperclip"
 gem 'puma', '~> 4.1'

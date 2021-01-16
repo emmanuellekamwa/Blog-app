@@ -21,3 +21,8 @@ production:
   database: blooming-dusk-96945_production
   username: pixel_place
   password: <%= ENV['PIXEL_PLACE_DATABASE_PASSWORD'] %>
+
+ production:
+   <<: *default
+   adapter: postgresql
+   database: db/production.sqlite3
