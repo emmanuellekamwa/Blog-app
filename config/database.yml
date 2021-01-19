@@ -6,7 +6,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+<<: *default
   database: blooming-dusk-96945_development
 
 # Warning: The database defined as "test" will be erased and
@@ -23,6 +23,6 @@ production:
   password: <%= ENV['PIXEL_PLACE_DATABASE_PASSWORD'] %>
 
  production:
-   <<: *default
-   adapter: postgresql
-   database: db/production.sqlite3
+  <<: *default
+  adapter: postgresql
+  database: db/production.sqlite3
